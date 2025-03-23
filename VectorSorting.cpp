@@ -2,7 +2,7 @@
 // Name        : VectorSorting.cpp
 // Author      : Caity OBrien
 // Version     : 1.0
-// Copyright   : Copyright Â© 2023 SNHU COCE
+// Copyright   : Copyright © 2023 SNHU COCE
 // Description : Vector Sorting Algorithms
 //============================================================================
 
@@ -121,7 +121,6 @@ vector<Bid> loadBids(string csvPath) {
  * @param end Ending index to partition
  */
 int partition(vector<Bid>& bids, int begin, int end) {
-    Bid bid;
     //set low and high equal to begin and end
     int low = begin;
     int high = end;
@@ -166,7 +165,6 @@ int partition(vector<Bid>& bids, int begin, int end) {
  */
 void quickSort(vector<Bid>& bids, int begin, int end) {
     //set mid equal to 0
-    Bid bid;
     int mid = 0;
     
     /* Base case: If there are 1 or zero bids to sort,
@@ -189,8 +187,6 @@ void quickSort(vector<Bid>& bids, int begin, int end) {
  *            instance to be sorted
  */
 void selectionSort(vector<Bid>& bids) {
-    
-    Bid bid;
     int min; //define min as int (index of the current minimum bid)
     int i;
     int j;
@@ -200,14 +196,14 @@ void selectionSort(vector<Bid>& bids) {
     for (i = 0; i < (numBids - 1); ++i) {
         min = i; // sets min to the smallest remaining element
         for (j = (i + 1); j < numBids; ++j) {
-            if (bids[j].title < bids[i].title) { // THROWS EXCEPTION // checks if j is smaller than i
+            if (bids[j].title < bids[j].title) { // THROWS EXCEPTION // checks if j is smaller than i
                 min = j; // sets min equal to j
             }
         }
         // swaps numbers if j is smaller than i
-        temp = bid.title.at(i); //sets i as the temp variable
-        bid.title.at(i) = bid.title.at(min); // sets i equal to min
-        bid.title.at(min) = temp; // sets min equal to temp
+        temp = i; //sets i as the temp variable
+        i = min; // sets i equal to min
+        min = temp; // sets min equal to temp
     }
 }
 
