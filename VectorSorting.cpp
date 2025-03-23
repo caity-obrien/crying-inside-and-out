@@ -2,7 +2,7 @@
 // Name        : VectorSorting.cpp
 // Author      : Caity OBrien
 // Version     : 1.0
-// Copyright   : Copyright © 2023 SNHU COCE
+// Copyright   : Copyright Â© 2023 SNHU COCE
 // Description : Vector Sorting Algorithms
 //============================================================================
 
@@ -200,9 +200,7 @@ void selectionSort(vector<Bid>& bids) {
     for (i = 0; i < (numBids - 1); ++i) {
         min = i; // sets min to the smallest remaining element
         for (j = (i + 1); j < numBids; ++j) {
-            double valJ = bid.title.at(j);
-            double valI = bid.title.at(i);
-            if (valJ < valI) { // THROWS EXCEPTION // checks if j is smaller than i
+            if (bids[j].title < bids[i].title) { // THROWS EXCEPTION // checks if j is smaller than i
                 min = j; // sets min equal to j
             }
         }
