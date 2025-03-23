@@ -190,7 +190,7 @@ void selectionSort(vector<Bid>& bids) {
     int min; //define min as int (index of the current minimum bid)
     int i;
     int j;
-    int temp;
+    Bid temp;
     size_t numBids = bids.size(); // sets variable to size of vector
 
     for (i = 0; i < (numBids - 1); ++i) {
@@ -201,9 +201,10 @@ void selectionSort(vector<Bid>& bids) {
             }
         }
         // swaps numbers if j is smaller than i
-        temp = i; //sets i as the temp variable
-        i = min; // sets i equal to min
-        min = temp; // sets min equal to temp
+
+        temp = bids[i]; //sets i as the temp variable
+        bids[i] = bids[min]; // sets i equal to min
+        bids[min] = temp; // sets min equal to temp
     }
 }
 
